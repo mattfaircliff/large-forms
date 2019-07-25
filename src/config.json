@@ -1,0 +1,109 @@
+{
+  "form": {
+    "name": "order",
+    "fieldgroups": [
+      "Customer",
+      "Mains",
+      "Toppings",
+      "Extras"
+    ],
+    "fields": [
+      {
+        "name": "first_name",
+        "label": "First Name",
+        "group": "Customer"
+      } , {
+        "name": "last_name",
+        "label": "Surname",
+        "group": "Customer"
+      } , {
+        "name": "cell",
+        "label": "Cell",
+        "group": "Customer"
+      } , {
+        "name": "diet",
+        "label": "Dietary Requirement",
+        "group": "Customer",
+        "type": "select",
+        "options": [
+          { "label": "Regular", "value": "regular" },
+          { "label": "Vegetarian", "value": "vegetarian" }
+        ]
+      } , {
+        "name": "dish",
+        "label": "Order",
+        "group": "Mains",
+        "watch": [ "diet" ],
+        "show": {
+          "diet": "regular"
+        },
+        "type": "select",
+        "options": [
+          { "label": "Steak", "value": "steak" },
+          { "label": "Calamari", "value": "calamari" },
+          { "label": "Pizza", "value": "pizza" },
+          { "label": "Salad", "value": "salad" },
+          { "label": "Burger", "value": "burger" }
+        ]
+      } , {
+        "name": "dish",
+        "label": "Order",
+        "group": "Mains",
+        "watch": [ "diet" ],
+        "show": {
+          "diet": "vegetarian"
+        },
+        "type": "select",
+        "options": [
+          { "label": "Pizza", "value": "pizza" },
+          { "label": "Salad", "value": "salad" }
+        ]
+      } , {
+        "name": "olives",
+        "label": "Olives",
+        "group": "Toppings",
+        "watch": [ "dish" ],
+        "type": "checkbox",
+        "show": {
+          "dish": [ "salad", "pizza" ]
+        }
+      } , {
+        "name": "anchovies",
+        "label": "Anchovies",
+        "group": "Toppings",
+        "watch": [ "dish" ],
+        "type": "checkbox",
+        "show": {
+          "dish": "pizza"
+        }
+      } , {
+        "name": "mushrooms",
+        "label": "Mushrooms",
+        "group": "Toppings",
+        "watch": [ "dish" ],
+        "type": "checkbox",
+        "show": {
+          "dish": "pizza"
+        }
+      } , {
+        "name": "fries",
+        "label": "French Fries",
+        "group": "Extras",
+        "watch": [ "dish" ],
+        "type": "checkbox",
+        "show": {
+          "dish": [ "steak", "burger", "calamari" ]
+        }
+      } , {
+        "name": "mayo",
+        "label": "Mayonaise",
+        "group": "Extras",
+        "watch": [ "dish" ],
+        "type": "checkbox",
+        "show": {
+          "dish": [ "calamari", "burger" ]
+        }
+      }
+    ]
+  }
+}

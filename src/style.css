@@ -1,0 +1,40 @@
+.bigform {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.fieldcomponent.checkbox {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.fieldcomponent.checkbox label {
+  flex: 1 0 auto;
+  margin: 0 0 0 10px;
+}
+
+.fieldcomponent.checkbox input {
+  width: auto;
+  margin: 0;
+}
+
+input {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 5px 10px;
+  height: 2em;
+}
+
+select {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 3em;
+}
